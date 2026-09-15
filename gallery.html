@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गैलरी | Gallery — Shree Banke Bihari Ji Mandir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body data-page="gallery">
+
+<div class="scroll-progress"></div>
+
+<!-- HEADER NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-mark">
+      <img src="assets/logoimage.png" alt="Temple emblem" class="logo-img">
+      <span class="logo-text">
+        <span class="logo-hi" data-hi="श्री बिहारी जी मंदिर" data-en="Shree Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर 3D</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+      <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल 🙏" data-en="Bihari Ji Sevak Dal">बिहारी जी सेवक दल 🙏</a>
+      <a href="gallery.html" class="active" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+      <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-option" data-lang="hi">हिं</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="donate.html" class="btn-donate" data-hi="दान करें" data-en="Donate Now">दान करें</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="page-banner">
+  <div class="page-banner-inner">
+    <p class="section-kicker" data-hi="दिव्य दर्शन एवं झलकियां" data-en="Divine Glimpses">दिव्य दर्शन एवं झलकियां</p>
+    <h1 data-hi="मंदिर दर्शन गैलरी" data-en="Temple Darshan Gallery">मंदिर दर्शन गैलरी</h1>
+    <p class="banner-sub" data-hi="श्री बांके बिहारी जी मंदिर, ग्राम सैनवा के अलौकिक दर्शन, उत्सवों और पावन प्रांगण की मनमोहक तस्वीरें।" data-en="Captivating moments, divine darshan, and grand festivities from Shree Banke Bihari Ji Mandir, Village Sainwa.">
+      श्री बांके बिहारी जी मंदिर, ग्राम सैनवा के अलौकिक दर्शन, उत्सवों और पावन प्रांगण की मनमोहक तस्वीरें।
+    </p>
+  </div>
+</section>
+
+<!-- FULL GALLERY GRID -->
+<section class="gallery-page reveal">
+  <div class="glass-panel">
+    <p class="center gallery-note" style="color: var(--gold-light); margin-bottom: 24px; font-style: italic;" data-hi="* किसी भी तस्वीर पर क्लिक करके बड़े आकार में देखें" data-en="* Click on any image to view in full resolution">* किसी भी तस्वीर पर क्लिक करके बड़े आकार में देखें</p>
+    <div class="gallery-grid-full">
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="श्री बांके बिहारी जी दिव्य विग्रह दर्शन"></div>
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="मंदिर गर्भगृह एवं 3D आभासी दर्शन"></div>
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="फूल बंगला व विशेष श्रृंगार आरती"></div>
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="भक्तों का समागम एवं भजन संध्या"></div>
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="सैनवा धाम पावन परिसर"></div>
+      <div class="gallery-tile-full"><img src="assets/deity-main.jpg" alt="संध्या महाआरती के पावन क्षण"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo-section">
+      <img src="assets/logoimage.png" alt="श्री बांके बिहारी जी मंदिर" class="footer-logo">
+      <div class="footer-tagline">
+        <p class="footer-temple-name" data-hi="श्री बांके बिहारी जी मंदिर" data-en="Shree Banke Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर</p>
+        <p class="footer-location" data-hi="सैनवा, छाता, मथुरा" data-en="Sainwa, Chhata, Mathura">सैनवा, छाता, मथुरा</p>
+        <p class="footer-quote">"श्री बांके बिहारी जी के चरणों में समर्पित — भक्ति, सेवा और मानव कल्याण।"</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" title="Facebook">f</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="Google">🔍</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4 data-hi="त्वरित लिंक" data-en="Quick Links">त्वरित लिंक</h4>
+        <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+        <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल" data-en="Sevak Dal">बिहारी जी सेवक दल</a>
+        <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+        <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+        <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="दर्शन समय" data-en="Timings">दर्शन समय</h4>
+        <p><strong>प्रातः आरती:</strong> 6:00 AM</p>
+        <p><strong>विशेष पूजा:</strong> 8:00 AM</p>
+        <p><strong>प्रसाद सेवा:</strong> 10:00 AM</p>
+        <p><strong>सायं आरती:</strong> 7:00 PM</p>
+        <p><strong>दर्शन:</strong> 5 AM – 12 PM, 4 PM – 9 PM</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="संपर्क" data-en="Address">संपर्क</h4>
+        <p><strong>📱 फ़ोन:</strong></p>
+        <a href="tel:+917060806121">+91-7060806121</a>
+        <p style="margin-top: 12px;"><strong>📧 ईमेल:</strong></p>
+        <a href="mailto:info@bankebihari.com">info@bankebihari.com</a>
+        <p style="margin-top: 12px;"><strong>📍 पता:</strong><br>
+        ग्राम सैनवा, छाता, मथुरा (भारत)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-hi="© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।" data-en="© 2026 Shree Banke Bihari Ji Mandir. All rights reserved.">© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।</p>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

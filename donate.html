@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>दान करें | Donate — Shree Banke Bihari Ji Mandir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body data-page="donate">
+
+<div class="scroll-progress"></div>
+
+<!-- HEADER NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-mark">
+      <img src="assets/logoimage.png" alt="Temple emblem" class="logo-img">
+      <span class="logo-text">
+        <span class="logo-hi" data-hi="श्री बिहारी जी मंदिर" data-en="Shree Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर 3D</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+      <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल 🙏" data-en="Bihari Ji Sevak Dal">बिहारी जी सेवक दल 🙏</a>
+      <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+      <a href="donate.html" class="active" data-hi="दान करें" data-en="Donate">दान करें</a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-option" data-lang="hi">हिं</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="donate.html" class="btn-donate" data-hi="दान करें" data-en="Donate Now">दान करें</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="page-banner page-banner-donate">
+  <div class="page-banner-inner">
+    <p class="section-kicker" data-hi="सेवा में सहभागी बनें" data-en="Become Part of the Seva">सेवा में सहभागी बनें</p>
+    <h1 data-hi="दान एवं मंदिर सहयोग" data-en="Temple Donations & Support">दान एवं मंदिर सहयोग</h1>
+    <p class="banner-sub" data-hi="मंदिर के रख-रखाव, दैनिक पूजा-अर्चना, साधु-संत सेवा एवं श्रद्धालुओं की व्यवस्था हेतु आपका सहयोग अमूल्य है।" data-en="Your contribution is invaluable for temple upkeep, daily worship, sadhu seva, and devotee welfare.">
+      मंदिर के रख-रखाव, दैनिक पूजा-अर्चना, साधु-संत सेवा एवं श्रद्धालुओं की व्यवस्था हेतु आपका सहयोग अमूल्य है।
+    </p>
+  </div>
+</section>
+
+<!-- DONATE CONTENT & QR COMPARISON -->
+<section class="donate-page reveal">
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="सुरक्षित डिजिटल दान" data-en="Secure Digital Donation">सुरक्षित डिजिटल दान</p>
+    <h2 class="section-title center" data-hi="QR कोड स्कैन कर सीधे दान करें" data-en="Scan QR Code to Donate Directly">QR कोड स्कैन कर सीधे दान करें</h2>
+    <p class="center" style="max-width: 720px; color: rgba(255,248,237,0.88); margin-bottom: 30px;" data-hi="आप किसी भी UPI ऍप (PhonePe, Google Pay, Paytm, BHIM) से नीचे दिए गए QR कोड को स्कैन करके दान समर्पित कर सकते हैं।" data-en="You can make your divine offering by scanning the QR code using any UPI app like Google Pay, PhonePe, Paytm, or BHIM.">
+      आप किसी भी UPI ऍप (PhonePe, Google Pay, Paytm, BHIM) से नीचे दिए गए QR कोड को स्कैन करके दान समर्पित कर सकते हैं।
+    </p>
+
+    <!-- SINGLE OFFICIAL QR CODE CARD -->
+    <div style="max-width: 480px; margin: 0 auto;">
+      <div class="qr-card featured">
+        <span class="qr-badge badge-primary" data-hi="श्री बांके बिहारी जी मंदिर — आधिकारिक QR" data-en="Shree Banke Bihari Ji Mandir — Official QR">श्री बांके बिहारी जी मंदिर — आधिकारिक QR</span>
+        <h3 data-hi="दान एवं सेवा सहयोग" data-en="Donation & Seva Offering">दान एवं सेवा सहयोग</h3>
+        <p class="qr-desc" data-hi="दैनिक आरती, भोग, पुष्प, अखंड दीप एवं मंदिर व्यवस्था हेतु स्कैन करें" data-en="Scan for daily aarti, bhog, flowers, akhand diya, and temple maintenance">दैनिक आरती, भोग, पुष्प, अखंड दीप एवं मंदिर व्यवस्था हेतु स्कैन करें</p>
+        
+        <div class="qr-box-container" style="width: 200px; height: 220px;">
+          <img src="assets/qr-code.jpg" alt="Banke Bihari Mandir Donation QR" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+        <div>
+          <span class="upi-tag">UPI ID: 7060806121@upi</span>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--gold-light); font-weight: 600;" data-hi="PhonePe • Google Pay • Paytm • BHIM" data-en="PhonePe • Google Pay • Paytm • BHIM">PhonePe • Google Pay • Paytm • BHIM</p>
+        <p style="font-size: 0.82rem; color: rgba(255,248,237,0.7); margin-top: 4px;" data-hi="सभी UPI ऍप्स पर 100% सुरक्षित भुगतान" data-en="100% Secure UPI Payment">सभी UPI ऍप्स पर 100% सुरक्षित भुगतान</p>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION & RECEIPT ADVISORY -->
+    <div class="donation-guidelines">
+      <div class="donation-guidelines-icon">📌</div>
+      <div>
+        <strong style="color: var(--gold-light);" data-hi="महत्वपूर्ण सूचना:" data-en="Important Note:">महत्वपूर्ण सूचना:</strong>
+        <p data-hi="कृपया दान करने के पश्चात 7060806121 नंबर पर दान की रसीद या स्क्रीनशॉट (WhatsApp/SMS) अवश्य भेजें ताकि आपकी सेवा दर्ज की जा सके।" data-en="After making your donation, kindly send the transaction screenshot/receipt to 7060806121 so that your seva offering can be acknowledged.">
+          कृपया दान करने के पश्चात 7060806121 नंबर पर दान की रसीद या स्क्रीनशॉट अवश्य भेजें ताकि आपकी सेवा दर्ज की जा सके।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEVA PURPOSES BREAKDOWN -->
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="सहयोग के क्षेत्र" data-en="Avenues of Contribution">सहयोग के क्षेत्र</p>
+    <h2 class="section-title center" data-hi="आपका दान कहां उपयोग होता है" data-en="How Your Donation is Utilized">आपका दान कहां उपयोग होता है</h2>
+    
+    <div class="sevak-grid">
+      <div class="sevak-card">
+        <span class="sevak-card-icon">🌸</span>
+        <h3 data-hi="नित्य पूजा व श्रृंगार सेवा" data-en="Daily Puja & Shringar">नित्य पूजा व श्रृंगार सेवा</h3>
+        <p data-hi="श्री बांके बिहारी जी की दैनिक पूजा, तुलसी दल, पुष्प मालाएं, इत्र एवं दिव्य श्रृंगार व्यवस्था।" data-en="Arranging fresh fragrant garlands, holy tulsi, pure attar, and divine adornments for daily darshan.">
+          श्री बांके बिहारी जी की दैनिक पूजा, तुलसी दल, पुष्प मालाएं, इत्र एवं दिव्य श्रृंगार व्यवस्था।
+        </p>
+      </div>
+
+      <div class="sevak-card">
+        <span class="sevak-card-icon">🪔</span>
+        <h3 data-hi="अखंड दीप व मंदिर व्यवस्था" data-en="Akhand Diya & Upkeep">अखंड दीप व मंदिर व्यवस्था</h3>
+        <p data-hi="मंदिर में अखंड ज्योति प्रज्वलन, शुद्ध गाय का घी, तिल का तेल तथा मंदिर प्रांगण का रख-रखाव।" data-en="Pure cow ghee and sesame oil for eternal sanctum lamps and essential temple renovations.">
+          मंदिर में अखंड ज्योति प्रज्वलन, शुद्ध गाय का घी, तिल का तेल तथा मंदिर प्रांगण का रख-रखाव।
+        </p>
+      </div>
+
+      <div class="sevak-card">
+        <span class="sevak-card-icon">🍲</span>
+        <h3 data-hi="प्रसाद वितरण व अन्न क्षेत्र" data-en="Prasad & Annakshetra">प्रसाद वितरण व अन्न क्षेत्र</h3>
+        <p data-hi="दूर-दूर से आने वाले तीर्थयात्रियों एवं साधु-संतों के लिए प्रसाद एवं जल की निःशुल्क सेवा।" data-en="Continuous voluntary offerings of sacred prasad and food service for sadhus and visiting pilgrims.">
+          दूर-दूर से आने वाले तीर्थयात्रियों एवं साधु-संतों के लिए प्रसाद एवं जल की निःशुल्क सेवा।
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo-section">
+      <img src="assets/logoimage.png" alt="श्री बांके बिहारी जी मंदिर" class="footer-logo">
+      <div class="footer-tagline">
+        <p class="footer-temple-name" data-hi="श्री बांके बिहारी जी मंदिर" data-en="Shree Banke Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर</p>
+        <p class="footer-location" data-hi="सैनवा, छाता, मथुरा" data-en="Sainwa, Chhata, Mathura">सैनवा, छाता, मथुरा</p>
+        <p class="footer-quote">"श्री बांके बिहारी जी के चरणों में समर्पित — भक्ति, सेवा और मानव कल्याण।"</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" title="Facebook">f</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="Google">🔍</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4 data-hi="त्वरित लिंक" data-en="Quick Links">त्वरित लिंक</h4>
+        <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+        <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल" data-en="Sevak Dal">बिहारी जी सेवक दल</a>
+        <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+        <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+        <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="दर्शन समय" data-en="Timings">दर्शन समय</h4>
+        <p><strong>प्रातः आरती:</strong> 6:00 AM</p>
+        <p><strong>विशेष पूजा:</strong> 8:00 AM</p>
+        <p><strong>प्रसाद सेवा:</strong> 10:00 AM</p>
+        <p><strong>सायं आरती:</strong> 7:00 PM</p>
+        <p><strong>दर्शन:</strong> 5 AM – 12 PM, 4 PM – 9 PM</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="संपर्क" data-en="Address">संपर्क</h4>
+        <p><strong>📱 दान सहायता:</strong></p>
+        <a href="tel:7060806121">+91-7060806121</a>
+        <p style="margin-top: 12px;"><strong>📧 ईमेल:</strong></p>
+        <a href="mailto:info@bankebihari.com">info@bankebihari.com</a>
+        <p style="margin-top: 12px;"><strong>📍 पता:</strong><br>
+        ग्राम सैनवा, छाता, मथुरा (उत्तर प्रदेश)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-hi="© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।" data-en="© 2026 Shree Banke Bihari Ji Mandir. All rights reserved.">© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।</p>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

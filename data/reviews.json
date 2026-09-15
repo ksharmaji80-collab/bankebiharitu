@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1788871689314,
+    "author": {
+      "hi": "krishna sharma",
+      "en": "krishna sharma"
+    },
+    "text": {
+      "hi": "good",
+      "en": "good"
+    },
+    "rating": 5,
+    "date": "2026-09-08"
+  },
+  {
+    "id": 1,
+    "author": {
+      "hi": "राधा शर्मा",
+      "en": "Radha Sharma"
+    },
+    "text": {
+      "hi": "मंदिर की 3D आभासी सेवा बहुत ही सुंदर है। घर बैठे श्री बांके बिहारी जी के दर्शन का असीम आनंद मिला।",
+      "en": "The 3D virtual temple seva is breathtaking. Blessed to experience divine darshan of Shree Banke Bihari Ji from home."
+    },
+    "rating": 5,
+    "date": "2026-09-01"
+  },
+  {
+    "id": 2,
+    "author": {
+      "hi": "स्थानीय भक्त",
+      "en": "Local Devotee"
+    },
+    "text": {
+      "hi": "बहुत ही शांत और पावन धाम। सैनवा गांव में बिहारी जी के दर्शन कर मन को असीम शांति प्राप्त होती है।",
+      "en": "A deeply peaceful and sacred place. Visiting Bihari Ji in Sainwa village brings immense peace of mind."
+    },
+    "rating": 5,
+    "date": "2026-08-30"
+  },
+  {
+    "id": 3,
+    "author": {
+      "hi": "भक्त परिवार",
+      "en": "Devotee Family"
+    },
+    "text": {
+      "hi": "श्री बांके बिहारी जी की कृपा से सभी मनोकामनाएं पूर्ण होती हैं। जय श्री कृष्ण! राधे-राधे!",
+      "en": "By the grace of Shree Banke Bihari Ji, all wishes are fulfilled. Jai Shree Krishna! Radhe-Radhe!"
+    },
+    "rating": 5,
+    "date": "2026-08-28"
+  },
+  {
+    "id": 4,
+    "author": {
+      "hi": "सुरेश कुमार",
+      "en": "Suresh Kumar"
+    },
+    "text": {
+      "hi": "मंदिर परिसर बहुत स्वच्छ और व्यवस्थित है। आरती के समय का वातावरण अत्यंत दिव्य होता है।",
+      "en": "The temple premises are very clean and orderly. The atmosphere during Aarti is truly divine."
+    },
+    "rating": 5,
+    "date": "2026-08-20"
+  }
+]

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्री बांके बिहारी जी मंदिर | Shree Banke Bihari Ji Mandir— Sainwa, Chhata, Mathura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body data-page="home">
+
+<!-- 3D WEBGL CANVAS BACKGROUND -->
+<div id="webgl-canvas-container" aria-hidden="true"></div>
+
+<div class="page-loader" aria-hidden="true">
+  <div class="loader-mandala">✦</div>
+  <span>श्री बांके बिहारी जी 3D दर्शन</span>
+</div>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- HEADER NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#home" class="logo-mark">
+      <img src="assets/logoimage.png" alt="Temple emblem" class="logo-img">
+      <span class="logo-text">
+        <span class="logo-hi" data-hi="श्री बिहारी जी मंदिर " data-en="Shree Bihari Ji Mandir ">श्री बांके बिहारी जी मंदिर 3D</span>
+        <!-- <span class="logo-sub" data-hi="सैनवा, छाता, मथुरा" data-en="Sainwa, Chhata, Mathura">सैनवा, छाता, मथुरा</span> -->
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active" data-hi="होम" data-en="Home">होम</a>
+      <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल 🙏" data-en="Bihari Ji Sevak Dal">बिहारी जी सेवक दल 🙏</a>
+      <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+      <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- <div class="seva-quick-actions">
+        <button class="btn-seva" id="btnOfferDiya" title="Offer 3D Diya" data-hi="🪔 दीया" data-en="🪔 Diya">🪔 दीया</button>
+        <button class="btn-seva" id="btnFlowerShower" title="Shower 3D Flowers" data-hi="🌸 पुष्प" data-en="🌸 Flowers">🌸 पुष्प</button>
+        <button class="btn-seva" id="btnRingBell" title="Ring 3D Temple Bell" data-hi="🔔 घंटा" data-en="🔔 Bell">🔔 घंटा</button>
+      </div> -->
+
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-option" data-lang="hi">हिं</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="donate.html" class="btn-donate" data-hi="दान करें" data-en="Donate Now">दान करें</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT HERITAGE SECTION (NOW FIRST) -->
+<section id="about" class="hero">
+  <div class="hero-grid">
+    <div class="about-frame" style="margin-bottom: 0;">
+      <img src="assets/deity-main.jpg" alt="Shree Banke Bihari Ji Mandir deity darshan">
+    </div>
+    <div class="hero-card">
+      <p class="section-kicker" data-hi="पवित्र विरासत" data-en="Sacred Heritage">पवित्र विरासत</p>
+      <h1 class="section-title" data-hi="श्री बांके बिहारी जी मंदिर, सैनवा" data-en="Shree Banke Bihari Ji Mandir, Sainwa">श्री बांके बिहारी जी मंदिर, सैनवा</h1>
+      <p style="margin-bottom: 16px; color: rgba(255,248,237,0.88);" data-hi="श्री बांके बिहारी जी मंदिर हमारे गांव सैनवा, छाता, मथुरा में स्थित है और यहां के महंत जी की देखरेख में मंदिर का संचालन होता है। यहां प्रतिवर्ष अनेक भक्त दूर-दूर से आकर दर्शन करते हैं और अपनी मनोकामनाएं भगवान के सन्मुख रखते हैं।" data-en="Shree Banke Bihari Ji Mandir is situated in Village Sainwa, Chhata, Mathura, managed under the spiritual guidance of the temple's mahant. Every year, thousands of devotees seek divine blessings.">
+        श्री बांके बिहारी जी मंदिर हमारे गांव सैनवा, छाता, मथुरा में स्थित है और यहां के महंत जी की देखरेख में मंदिर का संचालन होता है। यहां प्रतिवर्ष अनेक भक्त दूर-दूर से आकर दर्शन करते हैं और अपनी मनोकामनाएं भगवान के सन्मुख रखते हैं।
+      </p>
+      <p style="color: var(--gold-light); font-style: italic;" data-hi="* 3D तकनीक द्वारा तैयार किया गया आभासी मंदिर गर्भगृह।" data-en="* Interactive 3D Sanctum rendered using WebGL real-time technology.">* 3D तकनीक द्वारा तैयार किया गया आभासी मंदिर गर्भगृह।</p>
+      
+      <div class="hero-actions" style="margin-top: 24px;">
+        <button class="btn-primary" id="btnOfferDiya" data-hi="🪔 दीया प्रज्वलित करें" data-en="🪔 Offer 3D Diya">🪔 दीया प्रज्वलित करें</button>
+        <button class="btn-outline" id="btnFlowerShower" data-hi="🌸 पुष्प वर्षा करें" data-en="🌸 Shower Flowers">🌸 पुष्प वर्षा करें</button>
+        <button class="btn-outline" id="btnRingBell" data-hi="🔔 घंटा बजाएं" data-en="🔔 Ring Bell">🔔 घंटा बजाएं</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="statVisitors" data-count="1250" data-suffix="+">250+</span>
+          <span class="stat-label" data-hi="दैनिक श्रद्धालु" data-en="Daily Visitors">दैनिक श्रद्धालु</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statYears" data-count="10" data-suffix="+">70+</span>
+          <span class="stat-label" data-hi="वर्षों की सेवा" data-en="Years of Service">वर्षों की सेवा</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statDiyas" data-count="412" data-suffix="+">108+</span>
+          <span class="stat-label" data-hi="अर्पित दीये" data-en="Diyas Offered">अर्पित दीये</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO SECTION (NOW SECOND) -->
+<!-- <section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-card">
+      <p class="hero-kicker" data-hi="मथुरा की पावन भूमि पर स्थित 3D मंदिर" data-en="3D Sanctum rooted in the sacred land of Mathura">मथुरा की पावन भूमि पर स्थित 3D मंदिर</p>
+      <h1 class="hero-title" data-hi="श्री बांके बिहारी जी" data-en="Shree Banke Bihari Ji">श्री बांके बिहारी जी</h1>
+      <p class="hero-sub" data-hi="भक्ति, आभासी सेवा और श्रद्धा का दिव्य 3D धाम। घर बैठे 3D गर्भगृह दर्शन और ऑनलाइन सेवा का अनुभव करें।" data-en="A sacred 3D abode of devotion and service. Experience interactive 3D Garbhagriha darshan online.">भक्ति, आभासी सेवा और श्रद्धा का दिव्य 3D धाम। घर बैठे 3D गर्भगृह दर्शन और ऑनलाइन सेवा का अनुभव करें।</p>
+      
+      <div class="hero-actions">
+        <button class="btn-primary" id="btnOfferDiyaHero" data-hi="🪔 दीया प्रज्वलित करें" data-en="🪔 Offer 3D Diya">🪔 दीया प्रज्वलित करें</button>
+        <button class="btn-outline" id="btnFlowerShowerHero" data-hi="🌸 पुष्प वर्षा करें" data-en="🌸 Shower Flowers">🌸 पुष्प वर्षा करें</button>
+        <button class="btn-outline" id="btnRingBellHero" data-hi="🔔 घंटा बजाएं" data-en="🔔 Ring Bell">🔔 घंटा बजाएं</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="statVisitors2" data-count="1250" data-suffix="+">1250+</span>
+          <span class="stat-label" data-hi="दैनिक श्रद्धालु" data-en="Daily Visitors">दैनिक श्रद्धालु</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statYears2" data-count="10" data-suffix="+">10+</span>
+          <span class="stat-label" data-hi="वर्षों की सेवा" data-en="Years of Service">वर्षों की सेवा</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statDiyas2" data-count="412" data-suffix="+">412+</span>
+          <span class="stat-label" data-hi="अर्पित दीये" data-en="Diyas Offered">अर्पित दीये</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- TIMINGS SECTION -->
+<section id="timings">
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="पावन समय" data-en="Sacred Schedule">पावन समय</p>
+    <h2 class="section-title center" data-hi="आरती एवं दर्शन समय" data-en="Aarti & Darshan Timings">आरती एवं दर्शन समय</h2>
+    
+    <div class="timing-grid">
+      <div class="timing-card">
+        <span class="timing-label" data-hi="प्रातः आरती" data-en="Morning Aarti">प्रातः आरती</span>
+        <span class="timing-value">6:00 AM</span>
+      </div>
+      <div class="timing-card">
+        <span class="timing-label" data-hi="प्रातः दर्शन" data-en="Morning Darshan">प्रातः दर्शन</span>
+        <span class="timing-value">5:00 AM – 12:00 PM</span>
+      </div>
+      <div class="timing-card">
+        <span class="timing-label" data-hi="सायं दर्शन" data-en="Evening Darshan">सायं दर्शन</span>
+        <span class="timing-value">4:00 PM – 9:00 PM</span>
+      </div>
+      <div class="timing-card">
+        <span class="timing-label" data-hi="सायं आरती" data-en="Evening Aarti">सायं आरती</span>
+        <span class="timing-value">7:00 PM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR TEMPLES SECTION (हमारे प्रमुख मंदिर) -->
+<section id="temples">
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="पावन तीर्थ स्थल — ग्राम सैनवा" data-en="Sacred Destinations — Village Sainwa">पावन तीर्थ स्थल — ग्राम सैनवा</p>
+    <h2 class="section-title center" data-hi="हमारे प्रमुख मंदिर" data-en="Our Temples">हमारे प्रमुख मंदिर</h2>
+    <p class="center" style="max-width: 760px; color: rgba(255,248,237,0.85); margin-bottom: 20px;" data-hi="ग्राम सैनवा की पावन भूमि पर स्थित दिव्य एवं सिद्ध मंदिर, जहां नित्य प्रभु भक्ति, तप और सेवा की पावन धारा बहती है।" data-en="The divine and sacred shrines situated in Village Sainwa, where eternal devotion, ascetic penance, and holy seva flourish.">
+      ग्राम सैनवा की पावन भूमि पर स्थित दिव्य एवं सिद्ध मंदिर, जहां नित्य प्रभु भक्ति, तप और सेवा की पावन धारा बहती है।
+    </p>
+
+    <div class="temples-grid">
+      
+      <!-- 1. Shri Shyam Kund Baba Mandir -->
+      <div class="temple-card">
+        <div class="temple-img-wrap">
+          <img src="assets/deity-main.jpg" alt="श्री श्याम कुंड बाबा मंदिर">
+          <span class="temple-tag" data-hi="पवित्र कुंड धाम" data-en="Sacred Kund Dham">पवित्र कुंड धाम</span>
+        </div>
+        <div class="temple-card-body">
+          <h3 class="temple-title" data-hi="श्री श्याम कुंड बाबा मंदिर" data-en="Shri Shyam Kund Baba Mandir">श्री श्याम कुंड बाबा मंदिर</h3>
+          <p class="temple-desc" data-hi="श्री श्याम बिहारी मंदिर ग्राम सैनवा के सवल-थोक में स्थित है। इस मंदिर के महंत श्री गोपाल बाबा हैं। जो भी भक्त हिंदी महीना भादों अमावस को श्री श्याम कुंड की परिक्रमा कर एवं रास करवाता है, उनकी सभी मनोकामनाएं पूरी होती हैं। यहां अनेकानेक भक्त दूर-दूर से आकर अपनी अनेकों मनोकामना भगवान के सन्मुख रखते हैं। यह मंदिर श्री श्याम कुंड के तट पर बना हुआ है।" data-en="Shri Shyam Bihari Mandir is situated in Sawal Thok of Village Sainwa, presided by Mahant Shri Gopal Baba. Devotees performing parikrama and Raas on Bhado Amavasya at Shri Shyam Kund have all their heartfelt wishes fulfilled. Situated on the serene banks of Shri Shyam Kund.">
+            श्री श्याम बिहारी मंदिर ग्राम सैनवा के सवल-थोक में स्थित है। इस मंदिर के महंत श्री गोपाल बाबा हैं। जो भी भक्त हिंदी महीना भादों अमावस को श्री श्याम कुंड की परिक्रमा कर एवं रास करवाता है, उनकी सभी मनोकामनाएं पूरी होती हैं। यहां अनेकानेक भक्त दूर-दूर से आकर अपनी अनेकों मनोकामना भगवान के सन्मुख रखते हैं। यह मंदिर श्री श्याम कुंड के तट पर बना हुआ है।
+          </p>
+          <button class="btn-view-temple" data-temple="shyam-kund" data-hi="विवरण देखें →" data-en="View Details →">विवरण देखें →</button>
+        </div>
+      </div>
+
+      <!-- 2. Shri Shyam Bihari Mandir -->
+      <div class="temple-card">
+        <div class="temple-img-wrap">
+          <img src="assets/deity-main.jpg" alt="श्री श्याम बिहारी मंदिर">
+          <span class="temple-tag" data-hi="प्राचीन धाम" data-en="Ancient Dham">प्राचीन धाम</span>
+        </div>
+        <div class="temple-card-body">
+          <h3 class="temple-title" data-hi="श्री श्याम बिहारी मंदिर" data-en="Shri Shyam Bihari Mandir">श्री श्याम बिहारी मंदिर</h3>
+          <p class="temple-desc" data-hi="यह मंदिर ग्राम सैनवा के पीता थोक में स्थित है। यह मंदिर भी श्री श्याम कुंड के किनारे पर बना हुआ है। इस मंदिर में श्री कृष्ण, राधा, राम दरबार और माता रानी की मूर्तियां विराजमान हैं।" data-en="Located in Peeta Thok, Village Sainwa, adjoining the sacred Shri Shyam Kund. The sanctum enshrines Lord Krishna, Radha Rani, Ram Darbar, and Mata Rani.">
+            यह मंदिर ग्राम सैनवा के पीता थोक में स्थित है। यह मंदिर भी श्री श्याम कुंड के किनारे पर बना हुआ है। इस मंदिर में श्री कृष्ण, राधा, राम दरबार और माता रानी की मूर्तियां विराजमान हैं।
+          </p>
+          <button class="btn-view-temple" data-temple="shyam-bihari" data-hi="विवरण देखें →" data-en="View Details →">विवरण देखें →</button>
+        </div>
+      </div>
+
+      <!-- 3. Tapa Baba Mandir (Uploaded Photo) -->
+      <div class="temple-card">
+        <div class="temple-img-wrap">
+          <img src="assets/tapa-baba.jpg" alt="तपा बाबा मंदिर एवं पावन चरण चिह्न">
+          <span class="temple-tag" data-hi="सिद्ध तपोभूमि" data-en="Sacred Tapobhoomi">सिद्ध तपोभूमि</span>
+        </div>
+        <div class="temple-card-body">
+          <h3 class="temple-title" data-hi="तपा बाबा मंदिर (सिद्ध चरण धाम)" data-en="Tapa Baba Mandir">तपा बाबा मंदिर (सिद्ध चरण धाम)</h3>
+          <p class="temple-desc" data-hi="ग्राम सैनवा की परम सिद्ध तपोभूमि जहां पूज्य तपा बाबा के दिव्य चरण चिह्न और उनकी तपस्या की दिव्य ऊर्जा आज भी विराजमान है। यहां सच्चे भाव से शीश नवाने वाले भक्तों के सभी कष्ट दूर होते हैं और मनोकामनाएं पूर्ण होती हैं।" data-en="The revered ascetic abode enshrining holy footprints (charan chinha) of Pujya Tapa Baba in Village Sainwa. Devotees offer daily flowers and prayers for spiritual peace and fulfilment of vows.">
+            ग्राम सैनवा की परम सिद्ध तपोभूमि जहां पूज्य तपा बाबा के दिव्य चरण चिह्न और उनकी तपस्या की दिव्य ऊर्जा आज भी विराजमान है। यहां सच्चे भाव से शीश नवाने वाले भक्तों के सभी कष्ट दूर होते हैं और मनोकामनाएं पूर्ण होती हैं।
+          </p>
+          <button class="btn-view-temple" data-temple="tapa-baba" data-hi="विवरण देखें →" data-en="View Details →">विवरण देखें →</button>
+        </div>
+      </div>
+
+      <!-- 4. Shri Jahar Veer Mandir -->
+      <div class="temple-card">
+        <div class="temple-img-wrap">
+          <img src="assets/deity-main.jpg" alt="श्री जाहर वीर मंदिर">
+          <span class="temple-tag" data-hi="वीर धाम" data-en="Veer Dham">वीर धाम</span>
+        </div>
+        <div class="temple-card-body">
+          <h3 class="temple-title" data-hi="श्री जाहर वीर मंदिर" data-en="Shri Jahar Veer Mandir">श्री जाहर वीर मंदिर</h3>
+          <p class="temple-desc" data-hi="यह मंदिर ग्राम सैनवा के सयाल थोक में स्थित है। श्री श्याम कुंड बाबा के मंदिर पर संतों की प्रेरणा से श्री जाहर वीर गोगा जी महाराज का मंदिर निर्माण दिसंबर 2015 को हुआ था।" data-en="Situated in Sayal Thok of Village Sainwa near Shri Shyam Kund. Built in December 2015 inspired by holy saints, dedicated to Shri Jahar Veer Goga Ji Maharaj.">
+            यह मंदिर ग्राम सैनवा के सयाल थोक में स्थित है। श्री श्याम कुंड बाबा के मंदिर पर संतों की प्रेरणा से श्री जाहर वीर गोगा जी महाराज का मंदिर निर्माण दिसंबर 2015 को हुआ था।
+          </p>
+          <button class="btn-view-temple" data-temple="jahar-veer" data-hi="विवरण देखें →" data-en="View Details →">विवरण देखें →</button>
+        </div>
+      </div>
+
+      <!-- 5. Devi Mata Ka Mandir -->
+      <div class="temple-card">
+        <div class="temple-img-wrap">
+          <img src="assets/deity-main.jpg" alt="देवी माता का मंदिर">
+          <span class="temple-tag" data-hi="शक्ति पीठ" data-en="Shakti Shrine">शक्ति पीठ</span>
+        </div>
+        <div class="temple-card-body">
+          <h3 class="temple-title" data-hi="देवी माता का मंदिर" data-en="Devi Mata Ka Mandir">देवी माता का मंदिर</h3>
+          <p class="temple-desc" data-hi="यह मंदिर गांव सैनवा के अंदया थोक में स्थित है। इस मंदिर का निर्माण दौलतिया बाबा ने करवाया था। इस मंदिर का निर्माण ४५ वर्ष पहले हुआ था। इस मंदिर की अपनी अलग मान्यता है। मंदिर के प्रांगण में बड़ा सुंदर कुआं और बहुत सुंदर वृक्ष है।" data-en="Located in Andaya Thok, Village Sainwa. Constructed around 45 years ago by Doulatiya Baba. Renowned for its spiritual aura, featuring a serene sacred well and lush ancient trees in the courtyard.">
+            यह मंदिर गांव सैनवा के अंदया थोक में स्थित है। इस मंदिर का निर्माण दौलतिया बाबा ने करवाया था। इस मंदिर का निर्माण ४५ वर्ष पहले हुआ था। इस मंदिर की अपनी अलग मान्यता है। मंदिर के प्रांगण में बड़ा सुंदर कुआं और बहुत सुंदर वृक्ष है।
+          </p>
+          <button class="btn-view-temple" data-temple="devi-mata" data-hi="विवरण देखें →" data-en="View Details →">विवरण देखें →</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="center" style="margin-top: 32px;">
+      <a href="gallery.html" class="btn-primary" data-hi="समस्त मंदिर दर्शन गैलरी देखें" data-en="View Full Photo Gallery">समस्त मंदिर दर्शन गैलरी देखें →</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS & DEVOTEES FEEDBACK SECTION -->
+<section id="reviews">
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="भक्तों के अनुभव" data-en="Devotee Experiences">भक्तों के अनुभव</p>
+    <h2 class="section-title center" data-hi="श्रद्धालुओं की समीक्षाएं" data-en="Devotee Reviews">श्रद्धालुओं की समीक्षाएं</h2>
+
+    <!-- Dynamic Reviews Grid populated from data/reviews.json -->
+    <div class="review-grid" id="reviews-grid-mount">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-hi="मंदिर की 3D आभासी सेवा बहुत ही सुंदर है। घर बैठे श्री बांके बिहारी जी के दर्शन का असीम आनंद मिला।" data-en="The 3D virtual temple seva is breathtaking. Blessed to experience divine darshan of Shree Banke Bihari Ji from home.">मंदिर की 3D आभासी सेवा बहुत ही सुंदर है। घर बैठे श्री बांके बिहारी जी के दर्शन का असीम आनंद मिला।</p>
+        <span class="review-author" data-hi="— राधा शर्मा" data-en="— Radha Sharma">— राधा शर्मा</span>
+      </div>
+    </div>
+
+    <!-- Review Form -->
+    <div class="review-form-panel">
+      <h3 style="margin-bottom: 16px;" data-hi="अपनी अनुभव समीक्षा लिखें" data-en="Write Your Experience">अपनी अनुभव समीक्षा लिखें</h3>
+      <form id="reviewForm">
+        <div class="form-group">
+          <label for="reviewAuthor" data-hi="आपका नाम / Name" data-en="Your Name">आपका नाम</label>
+          <input type="text" id="reviewAuthor" class="form-control" placeholder="उदा. रमेश कुमार / Ramesh Kumar" required>
+        </div>
+        <div class="form-group">
+          <label for="reviewRating" data-hi="रेटिंग / Rating" data-en="Rating">रेटिंग</label>
+          <select id="reviewRating" class="form-control">
+            <option value="5">★★★★★ (5 Stars)</option>
+            <option value="4">★★★★☆ (4 Stars)</option>
+            <option value="3">★★★☆☆ (3 Stars)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reviewText" data-hi="अनुभव संदेश / Message" data-en="Your Review Message">अनुभव संदेश</label>
+          <textarea id="reviewText" class="form-control" rows="3" placeholder="मंदिर दर्शन का अपना अनुभव साझा करें..." required></textarea>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <button type="submit" class="btn-primary" data-hi="समीक्षा सबमिट करें" data-en="Submit Review">समीक्षा सबमिट करें</button>
+          <a href="https://www.google.com/maps/search/?api=1&query=Banke+Bihari+Temple+Sainwa+Chhata+Mathura" target="_blank" rel="noopener" class="btn-outline" data-hi="Google पर समीक्षा दें" data-en="Review on Google Maps">Google पर समीक्षा दें</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE SECTION -->
+<section id="donate">
+  <div class="glass-panel">
+    <div class="donate-inner">
+      <div>
+        <p class="section-kicker" data-hi="सेवा में सहभागी बनें" data-en="Become Part of Seva">सेवा में सहभागी बनें</p>
+        <h2 class="section-title" data-hi="दान एवं मंदिर सहयोग" data-en="Temple Support & Donations">दान एवं मंदिर सहयोग</h2>
+        <p style="margin-bottom: 20px; color: rgba(255,248,237,0.88);" data-hi="मंदिर के रख-रखाव, दैनिक पूजा-अर्चना एवं भक्तों की सेवा हेतु आपका सहयोग अमूल्य है। नीचे दिए गए QR कोड को स्कैन कर सीधे दान कर सकते हैं।" data-en="Your contribution is invaluable for temple upkeep, daily worship, and devotee service. Scan the QR code to donate directly.">
+          मंदिर के रख-रखाव, दैनिक पूजा-अर्चना एवं भक्तों की सेवा हेतु आपका सहयोग अमूल्य है। नीचे दिए गए QR कोड को स्कैन कर सीधे दान कर सकते हैं।
+        </p>
+        <p style="font-size: 1.2rem; color: var(--gold-light); font-weight: 600;" data-hi="UPI आईडी: yourtemple@upi" data-en="UPI ID: yourtemple@upi">UPI आईडी: yourtemple@upi</p>
+        <div style="margin-top: 20px;">
+          <a href="donate.html" class="btn-primary" data-hi="विस्तृत दान पृष्ठ एवं QR देखें" data-en="View Full Donation Page & QR">विस्तृत दान पृष्ठ एवं QR देखें →</a>
+        </div>
+      </div>
+
+      <div class="qr-frame">
+        <div style="font-size: 0.85rem; color: #4e0e1f; font-weight: 700;">SCAN TO DONATE</div>
+        <img src="assets/qr-code.jpg" alt="Banke Bihari Mandir Donation QR" class="qr-img" style="width: 200px; height: 200px; object-fit: contain; border-radius: 8px;">
+        <span class="qr-caption" data-hi="सभी UPI ऍप्स (GPay/PhonePe/Paytm) से स्कैन करें" data-en="Scan with any UPI App">सभी UPI ऍप्स से स्कैन करें</span>
+      </div>
+      <p style="margin-bottom: 20px; color: rgba(255,248,237,0.88);" data-hi="कृपया दान करने के पश्चात 7060806121 नंबर पर दान की रसीद/स्क्रीनशॉट अवश्य भेजें।" data-en="After making your donation, kindly send the donation receipt/screenshot to 7060806121.">
+          कृपया दान करने के पश्चात 7060806121 नंबर पर दान की रसीद/स्क्रीनशॉट अवश्य भेजें।
+        </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & MAP SECTION -->
+<section id="contact">
+  <div class="glass-panel">
+    <p class="section-kicker center" data-hi="मार्ग निर्देश" data-en="Directions">मार्ग निर्देश</p>
+    <h2 class="section-title center" data-hi="मंदिर तक कैसे पहुंचें" data-en="How to Reach the Temple">मंदिर तक कैसे पहुंचें</h2>
+    
+    <div class="direction-layout">
+      <div class="direction-copy-block">
+        <p style="margin-bottom: 20px; color: rgba(255,248,237,0.9);" data-hi="श्री बांके बिहारी जी मंदिर, गुलाल थोक, सैनवा, छाता, मथुरा (उत्तर प्रदेश)।" data-en="Shree Banke Bihari Ji Mandir, Gulal Thok, Sainwa, Chhata, Mathura (Uttar Pradesh).">श्री बांके बिहारी जी मंदिर, गुलाल थोक, सैनवा, छाता, मथुरा (उत्तर प्रदेश)।</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="https://www.google.com/maps/search/?api=1&query=Banke+Bihari+Temple+Sainwa+Chhata+Mathura" target="_blank" rel="noopener" class="btn-primary" data-hi="Google Maps में खोलें" data-en="Open in Google Maps">Google Maps में खोलें</a>
+          <a href="contact.html" class="btn-outline" data-hi="पूरा संपर्क विवरण देखें" data-en="View Full Contact Info">पूरा संपर्क विवरण देखें →</a>
+        </div>
+      </div>
+
+      <div class="direction-map-box">
+        <iframe
+          title="Shree Banke Bihari Ji Mandir map"
+          src="https://www.google.com/maps?q=Sainwa,Chhata,Mathura,Uttar+Pradesh&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo-section">
+      <img src="assets/logoimage.png" alt="श्री बांके बिहारी जी मंदिर" class="footer-logo">
+      <div class="footer-tagline">
+        <p class="footer-temple-name" data-hi="श्री बांके बिहारी जी मंदिर" data-en="Shree Banke Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर</p>
+        <p class="footer-location" data-hi="सैनवा, छाता, मथुरा" data-en="Sainwa, Chhata, Mathura">सैनवा, छाता, मथुरा</p>
+        <p class="footer-quote">"श्री बांके बिहारी जी के चरणों में समर्पित — भक्ति, सेवा और मानव कल्याण।"</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" title="Facebook">f</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="Google">🔍</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-inner">
+    <div class="footer-col">
+
+      <h4 data-hi="त्वरित लिंक" data-en="Quick Links">त्वरित लिंक</h4>
+      <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+      <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल" data-en="Sevak Dal">बिहारी जी सेवक दल</a>
+      <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+      <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-hi="दर्शन समय" data-en="Timings">दर्शन समय</h4>
+      <p><strong>प्रातः आरती:</strong> 6:00 AM</p>
+      <p><strong>विशेष पूजा:</strong> 8:00 AM</p>
+      <p><strong>प्रसाद सेवा:</strong> 10:00 AM</p>
+      <p><strong>सायं आरती:</strong> 7:00 PM</p>
+      <p><strong>दर्शन:</strong> 5 AM – 12 PM, 4 PM – 9 PM</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-hi="संपर्क" data-en="Address">संपर्क</h4>
+      <p><strong>📱 फ़ोन:</strong></p>
+      <a href="tel:+919876543210">+91-9876543210</a>
+      <a href="tel:+919876543211">+91-9876543211</a>
+      <p style="margin-top: 12px;"><strong>📧 ईमेल:</strong></p>
+      <a href="mailto:info@bankebihari.com">info@bankebihari.com</a>
+      <p style="margin-top: 12px;"><strong>📍 पता:</strong><br>
+      ग्राम सैनवा, छाता, मथुरा (भारत)</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-hi="© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।" data-en="© 2026 Shree Banke Bihari Ji Mandir. All rights reserved.">© 2026 श्री बांके बिहारी जी मंदिर .सर्वाधिकार सुरक्षित।</p>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
