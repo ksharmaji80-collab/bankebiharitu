@@ -467,7 +467,7 @@ if (galleryImages.length > 0) {
 const templeData = {
   'shyam-kund': {
     title: { hi: "श्री श्याम कुंड बाबा मंदिर", en: "Shri Shyam Kund Baba Mandir" },
-    img: "assets/deity-main.jpg",
+    img: "assets/shyam-kund.jpg",
     text: {
       hi: "श्री श्याम बिहारी मंदिर ग्राम सैनवा के सवल-थोक में स्थित है। इस मंदिर के महंत श्री गोपाल बाबा हैं। जो भी भक्त हिंदी महीना भादों अमावस को श्री श्याम कुंड की परिक्रमा कर एवं रास करवाता है, उनकी सभी मनोकामनाएं पूरी होती हैं। यहां अनेकानेक भक्त दूर-दूर से आकर अपनी अनेकों मनोकामना भगवान के सन्मुख रखते हैं। यह मंदिर श्री श्याम कुंड के तट पर बना हुआ है।",
       en: "Shri Shyam Bihari Mandir is situated in Sawal Thok of Village Sainwa, presided by Mahant Shri Gopal Baba. Devotees performing parikrama and holy Raas on Bhado Amavasya at Shri Shyam Kund have all their heartfelt wishes fulfilled. Devotees visit from far and wide to offer prayers at this divine shrine situated on the banks of holy Shyam Kund."
