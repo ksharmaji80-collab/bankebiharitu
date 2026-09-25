@@ -1458,6 +1458,16 @@ h2.section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 30px;
   line-height: 1.8;
   margin-bottom: 20px;
 }
+.temple-modal-text p {
+  margin-bottom: 14px;
+}
+.temple-modal-text p:last-child {
+  margin-bottom: 0;
+}
+.temple-modal-text strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
 
 @media (max-width: 768px) {
   .temples-grid {
