@@ -90,6 +90,27 @@ function getLocalSubmittedReviews() {
   }
 }
 
+const defaultReviews = [
+  {
+    id: 1790327179789,
+    author: { hi: "gopal sharma", en: "Gopal Sharma" },
+    text: { hi: "sabhi har mahine 10 tarik ko qr pr 200 rupee kre jisse ki mandir ka fund badh jaye", en: "Everyone should contribute via QR by the 10th of every month to support the temple fund." },
+    rating: 5
+  },
+  {
+    id: 1,
+    author: { hi: "राधा शर्मा", en: "Radha Sharma" },
+    text: { hi: "मंदिर की 3D आभासी सेवा बहुत ही सुंदर है। घर बैठे श्री बांके बिहारी जी के दर्शन का असीम आनंद मिला।", en: "The 3D virtual temple seva is breathtaking. Blessed to experience divine darshan of Shree Banke Bihari Ji from home." },
+    rating: 5
+  },
+  {
+    id: 2,
+    author: { hi: "स्थानीय भक्त", en: "Local Devotee" },
+    text: { hi: "बहुत ही शांत और पावन धाम। सैनवा गांव में बिहारी जी के दर्शन कर मन को असीम शांति प्राप्त होती है।", en: "A deeply peaceful and sacred place. Visiting Bihari Ji in Sainwa village brings immense peace of mind." },
+    rating: 5
+  }
+];
+
 // Fetch Top 3 Reviews from local data/reviews.json & merge with user submissions
 async function loadTopReviews() {
   const localReviews = getLocalSubmittedReviews();
@@ -107,10 +128,13 @@ async function loadTopReviews() {
     renderReviews(currentTopReviews);
   } catch (err) {
     console.log('Using local/fallback reviews:', err);
-    if (localReviews.length > 0) {
-      currentTopReviews = localReviews.slice(0, 3);
-      renderReviews(currentTopReviews);
-    }
+    const existingIds = new Set(defaultReviews.map(r => r.id));
+    const merged = [
+      ...localReviews.filter(r => !existingIds.has(r.id)),
+      ...defaultReviews
+    ];
+    currentTopReviews = merged.slice(0, 3);
+    renderReviews(currentTopReviews);
   }
 }
 
