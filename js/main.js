@@ -587,11 +587,11 @@ const tmImg = templeModal.querySelector('.temple-modal-img');
 const tmTitle = templeModal.querySelector('.temple-modal-title');
 const tmText = templeModal.querySelector('.temple-modal-text');
 
-function openTempleModal(key) {
+function openTempleModal(key, cardImgSrc) {
   const data = templeData[key];
   if (!data) return;
   const lang = getSavedLang();
-  tmImg.src = data.img;
+  tmImg.src = cardImgSrc || data.img;
   tmTitle.textContent = data.title[lang] || data.title.hi;
   tmText.innerHTML = data.text[lang] || data.text.hi;
   templeModal.classList.add('active');
@@ -611,7 +611,9 @@ document.addEventListener('click', (e) => {
   const btn = e.target.closest('.btn-view-temple');
   if (btn) {
     const key = btn.getAttribute('data-temple');
-    openTempleModal(key);
+    const card = btn.closest('.temple-card');
+    const cardImg = card ? card.querySelector('.temple-img-wrap img') : null;
+    openTempleModal(key, cardImg ? cardImg.src : null);
   }
 });
 
