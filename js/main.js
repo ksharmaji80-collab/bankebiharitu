@@ -522,10 +522,10 @@ const templeData = {
     title: { hi: "श्री बिहारी जी मंदिर", en: "Shri Bihari Ji Mandir" },
     img: "assets/deity-main.jpg",
     text: {
-      hi: `<p><strong>ग्राम सैनवा का सबसे प्राचीन मंदिर :</strong> यह मंदिर गांव सैनवा के गुलाल-थोक में स्थित है। यहां के महंत श्री चन्नी बाबा पुजारी जी हैं। मान्यता अनुसार यह गांव सैनवा का सबसे प्राचीन मंदिर है। जिस समय हमारा गांव सैनवा बसा, उससे भी पूर्व यह मंदिर यहां स्थित था।</p>
+      hi: `<p><strong>ग्राम सैनवा का सबसे प्राचीन मंदिर :</strong> यह मंदिर गांव सैनवा के गुलाल-थोक में स्थित है। यहां के महंत श्री चन्नी बाबा जी थे। मान्यता अनुसार यह गांव सैनवा का सबसे प्राचीन मंदिर है। जिस समय हमारा गांव सैनवा बसा, उससे भी पूर्व यह मंदिर यहां स्थित था।</p>
 <p><strong>श्री बांके बिहारी सरकार का साक्षात् स्वरूप :</strong> श्री बिहारी जी सरकार का विशेष महत्त्व यह है कि जो वृंदावन में श्री बांके बिहारी सरकार विराजमान हैं, उन्हीं का साक्षात् स्वरूप ग्राम सैनवा में भी था। बहुत पुरानी बात है, एक बार गांव सैनवा में कुछ चोर आए और श्री बिहारी जी सरकार के श्रीविग्रह को चुरा कर ले गए थे। तब बिहारी जी मंदिर पर पुनः जयपुर से दूसरी बिहारी जी की दिव्य मूर्ति लाकर प्राण-प्रतिष्ठा कराई गई एवं विशाल प्रसाद वितरण हुआ।</p>
 <p><strong>परिसर एवं सुंदर तालाब :</strong> श्री बिहारी जी सरकार के मंदिर के निकट ही सुंदर वृक्षावली है और मंदिर के निकट एक सुंदर तालाब बना हुआ है, जिसमें गांव के अनेकों पशु-पक्षी आकर जलपान करते हैं।</p>`,
-      en: `<p><strong>Most Ancient Sanctuary :</strong> Located in Gulal Thok, Village Sainwa, tended by Mahant Shri Channi Baba Pujari Ji. It is revered as the oldest shrine in Sainwa, predating even the establishment of the village itself.</p>
+      en: `<p><strong>Most Ancient Sanctuary :</strong> Located in Gulal Thok, Village Sainwa, tended by Mahant Shri Channi Baba Ji. It is revered as the oldest shrine in Sainwa, predating even the establishment of the village itself.</p>
 <p><strong>Living Presence of Vrindavan's Bihari Ji :</strong> The temple shares an unbroken spiritual connection with Vrindavan's Banke Bihari Ji. When the historic deity was stolen in ancient days, a consecrated marble idol was brought from Jaipur with Vedic rituals and grand prasad celebrations.</p>
 <p><strong>Surroundings & Holy Pond :</strong> Surrounded by dense trees and a pristine waterbody providing respite and hydration to all surrounding birds and cattle.</p>`
     }
