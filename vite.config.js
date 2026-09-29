@@ -19,6 +19,7 @@ export default defineConfig({
         donate: resolve(__dirname, 'donate.html'),
         contact: resolve(__dirname, 'contact.html'),
         sevakDal: resolve(__dirname, 'sevak-dal.html'),
+        aarti: resolve(__dirname, 'aarti.html'),
         blogs: resolve(__dirname, 'blogs.html')
       }
     }

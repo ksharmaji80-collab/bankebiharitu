@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आरती संग्रह एवं स्तुति | Aarti Sangrah — Shree Banke Bihari Ji Mandir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body data-page="aarti">
+
+<div class="scroll-progress"></div>
+
+<!-- HEADER NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-mark">
+      <img src="assets/logoimage.png" alt="Temple emblem" class="logo-img">
+      <span class="logo-text">
+        <span class="logo-hi" data-hi="श्री बिहारी जी मंदिर" data-en="Shree Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर 3D</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+      <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल 🙏" data-en="Bihari Ji Sevak Dal">बिहारी जी सेवक दल 🙏</a>
+      <a href="aarti.html" class="active" data-hi="आरती संग्रह" data-en="Aarti Sangrah">आरती संग्रह</a>
+      <a href="gallery.html" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+      <a href="donate.html" data-hi="दान करें" data-en="Donate">दान करें</a>
+      <a href="contact.html" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-option" data-lang="hi">हिं</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="donate.html" class="btn-donate" data-hi="दान करें" data-en="Donate Now">दान करें</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="page-banner">
+  <div class="page-banner-inner">
+    <p class="section-kicker" data-hi="नित्य स्तुति व वंदना" data-en="Daily Prayers & Devotion">नित्य स्तुति व वंदना</p>
+    <h1 data-hi="श्री आरती संग्रह एवं स्तुति" data-en="Shree Aarti Sangrah & Stuti">श्री आरती संग्रह एवं स्तुति</h1>
+    <p class="banner-sub" data-hi="श्री बांके बिहारी जी, राम स्तुति, हनुमान जी, शिव जी एवं समस्त देवी-देवताओं की पावन आरतियों का संपूर्ण संग्रह।" data-en="A sacred anthology of daily aartis and devotional hymns for Sri Banke Bihari Ji, Ram Stuti, Hanuman Ji, and all deities.">
+      श्री बांके बिहारी जी, राम स्तुति, हनुमान जी, शिव जी एवं समस्त देवी-देवताओं की पावन आरतियों का संपूर्ण संग्रह।
+    </p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="aarti-page reveal">
+  <div class="glass-panel">
+    <!-- SEARCH & FILTER TOOLBAR -->
+    <div class="aarti-toolbar">
+      <div class="aarti-search-wrap">
+        <span class="aarti-search-icon">🔍</span>
+        <input type="text" id="aartiSearchInput" class="aarti-search-input" placeholder="आरती खोजें (उदा: बिहारी जी, राम स्तुति, हनुमान जी, शिव जी)..." aria-label="Search Aarti">
+      </div>
+      <div class="aarti-filter-chips" id="aartiFilterChips">
+        <button type="button" class="aarti-filter-btn active" data-category="all" data-hi="सभी आरतियां" data-en="All Aartis">सभी आरतियां</button>
+        <button type="button" class="aarti-filter-btn" data-category="bihari" data-hi="श्री कृष्ण / बिहारी जी" data-en="Sri Krishna">श्री कृष्ण / बिहारी जी</button>
+        <button type="button" class="aarti-filter-btn" data-category="ram" data-hi="श्री राम स्तुति" data-en="Sri Ram">श्री राम स्तुति</button>
+        <button type="button" class="aarti-filter-btn" data-category="hanuman" data-hi="हनुमान जी" data-en="Hanuman Ji">हनुमान जी</button>
+        <button type="button" class="aarti-filter-btn" data-category="shiva" data-hi="भगवान शिव" data-en="Lord Shiva">भगवान शिव</button>
+        <button type="button" class="aarti-filter-btn" data-category="devi" data-hi="देवी माता" data-en="Devi Mata">देवी माता</button>
+      </div>
+    </div>
+
+    <!-- AARTI CARDS GRID -->
+    <div class="aarti-grid" id="aartiGrid">
+
+      <!-- 1. BANKE BIHARI JI AARTI -->
+      <div class="aarti-card" data-key="banke-bihari" data-category="bihari">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🌸 श्री बांके बिहारी जी</span>
+          <span class="aarti-duration-tag">⏱️ नित्य आरती</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री बांके बिहारी जी की आरती" data-en="Shree Banke Bihari Ji Aarti">श्री बांके बिहारी जी की आरती</h3>
+        <p class="aarti-card-preview">
+          "श्री बांके बिहारी तेरी आरती गाऊं, हे गिरधर तेरी आरती गाऊं। आरती गाऊं प्यारे तुमको रिझाऊं..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="banke-bihari">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. KUNJ BIHARI JI AARTI -->
+      <div class="aarti-card" data-key="kunj-bihari" data-category="bihari">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🪈 श्री कुंजबिहारी जी</span>
+          <span class="aarti-duration-tag">⏱️ संध्या आरती</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="आरती कुंजबिहारी की" data-en="Aarti Kunj Bihari Ki">आरती कुंजबिहारी की</h3>
+        <p class="aarti-card-preview">
+          "आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की। गले में बैजंती माला, बजावै मुरली मधुर बाला..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="kunj-bihari">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. RAM STUTI -->
+      <div class="aarti-card" data-key="ram-stuti" data-category="ram">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🏹 मर्यादा पुरुषोत्तम श्री राम</span>
+          <span class="aarti-duration-tag">⏱️ पावन स्तुति</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री राम स्तुति (श्री रामचंद्र कृपालु)" data-en="Shree Ram Stuti">श्री राम स्तुति (श्री रामचंद्र कृपालु)</h3>
+        <p class="aarti-card-preview">
+          "श्रीरामचन्द्र कृपालु भजु मन हरण भवभय दारुणं। नव कंज लोचन कंज मुख कर कंज पद कंजारुणं..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="ram-stuti">
+            <span data-hi="पूरी स्तुति पढ़ें 🪔" data-en="Read Full Stuti 🪔">पूरी स्तुति पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. HANUMAN JI AARTI -->
+      <div class="aarti-card" data-key="hanuman" data-category="hanuman">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🚩 श्री संकटमोचन हनुमान</span>
+          <span class="aarti-duration-tag">⏱️ नित्य आरती</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री हनुमान लला की आरती" data-en="Shree Hanuman Ji Aarti">श्री हनुमान लला की आरती</h3>
+        <p class="aarti-card-preview">
+          "आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की। जाके बल से गिरिवर कांपे..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="hanuman">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 5. SHIVA JI AARTI -->
+      <div class="aarti-card" data-key="shiva" data-category="shiva">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🕉️ देवों के देव महादेव</span>
+          <span class="aarti-duration-tag">⏱️ महाआरती</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री शिव जी की आरती (ॐ जय शिव ओंकारा)" data-en="Lord Shiva Aarti">श्री शिव जी की आरती (ॐ जय शिव ओंकारा)</h3>
+        <p class="aarti-card-preview">
+          "ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा। ब्रह्मा विष्णु सदाशिव अर्द्धांगी धारा..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="shiva">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6. GANESH JI AARTI -->
+      <div class="aarti-card" data-key="ganesh" data-category="bihari">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🐘 विघ्नहर्ता श्री गणेश</span>
+          <span class="aarti-duration-tag">⏱️ प्रथम पूज्य</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री गणेश जी की आरती (जय गणेश देवा)" data-en="Shree Ganesh Aarti">श्री गणेश जी की आरती (जय गणेश देवा)</h3>
+        <p class="aarti-card-preview">
+          "जय गणेश, जय गणेश, जय गणेश देवा। माता जाकी पार्वती, पिता महादेवा। एक दंत दयावंत..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="ganesh">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 7. AMBE MATA AARTI -->
+      <div class="aarti-card" data-key="ambe" data-category="devi">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🪔 जगदम्बा माँ भवानी</span>
+          <span class="aarti-duration-tag">⏱️ शक्ति वंदना</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री अम्बे गौरी माता की आरती" data-en="Shree Ambe Gauri Aarti">श्री अम्बे गौरी माता की आरती</h3>
+        <p class="aarti-card-preview">
+          "जय अम्बे गौरी, मैया जय श्यामा गौरी। तुमको निशिदिन ध्यावत, हरि ब्रह्मा शिवरी..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="ambe">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 8. JAGDISH JI AARTI -->
+      <div class="aarti-card" data-key="jagdish" data-category="bihari">
+        <div class="aarti-card-header">
+          <span class="aarti-deity-badge">🌟 भगवान श्री सत्यनारायण</span>
+          <span class="aarti-duration-tag">⏱️ सर्वकल्याण आरती</span>
+        </div>
+        <h3 class="aarti-card-title" data-hi="श्री जगदीश जी की आरती (ॐ जय जगदीश हरे)" data-en="Om Jai Jagdish Hare">श्री जगदीश जी की आरती (ॐ जय जगदीश हरे)</h3>
+        <p class="aarti-card-preview">
+          "ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे। भक्त जनों के संकट, क्षण में दूर करे..."
+        </p>
+        <div class="aarti-card-footer">
+          <button type="button" class="btn-read-aarti" data-aarti="jagdish">
+            <span data-hi="पूरी आरती पढ़ें 🪔" data-en="Read Full Aarti 🪔">पूरी आरती पढ़ें 🪔</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NO RESULTS MSG -->
+    <div id="noAartiResults" class="no-aarti-msg" style="display: none;">
+      <p>क्षमा करें! आपकी खोज से मेल खाती कोई आरती नहीं मिली। कृपया पुनः प्रयास करें।</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL AARTI READING MODAL -->
+<div class="aarti-modal" id="aartiModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="aarti-modal-overlay" id="aartiModalOverlay"></div>
+  <div class="aarti-modal-container">
+    <div class="aarti-modal-header">
+      <div class="aarti-modal-title-wrap">
+        <span class="aarti-modal-badge" id="modalDeityBadge">🌸 आरती</span>
+        <h2 class="aarti-modal-title" id="modalAartiTitle">आरती शीर्षक</h2>
+      </div>
+      <div class="aarti-modal-actions">
+        <!-- FONT ZOOM CONTROLS -->
+        <div class="font-zoom-ctrl">
+          <button type="button" id="btnZoomOut" title="फॉन्ट छोटा करें (A-)">A-</button>
+          <button type="button" id="btnZoomIn" title="फॉन्ट बड़ा करें (A+)">A+</button>
+        </div>
+        <!-- COPY BUTTON -->
+        <button type="button" id="btnCopyAarti" class="btn-modal-copy" title="आरती कॉपी करें">
+          <span>📋</span> <span id="copyAartiText">कॉपी</span>
+        </button>
+        <!-- CLOSE BUTTON -->
+        <button type="button" class="aarti-modal-close" id="btnAartiModalClose" aria-label="Close">✕</button>
+      </div>
+    </div>
+    
+    <div class="aarti-modal-body" id="modalAartiBody">
+      <!-- Full Stanzas Injected by JS -->
+    </div>
+
+    <div class="aarti-modal-footer">
+      <span class="aarti-footer-blessing">🙏 "श्री बांके बिहारी जी महाराज की जय! प्रभु कृपा आप पर सदैव बनी रहे।"</span>
+      <button type="button" class="btn-primary" id="btnModalCloseBottom">बंद करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo-section">
+      <img src="assets/logoimage.png" alt="श्री बांके बिहारी जी मंदिर" class="footer-logo">
+      <div class="footer-tagline">
+        <p class="footer-temple-name" data-hi="श्री बांके बिहारी जी मंदिर" data-en="Shree Banke Bihari Ji Mandir">श्री बांके बिहारी जी मंदिर</p>
+        <p class="footer-location" data-hi="सैनवा, छाता, मथुरा" data-en="Sainwa, Chhata, Mathura">सैनवा, छाता, मथुरा</p>
+        <p class="footer-quote">"श्री बांके बिहारी जी के चरणों में समर्पित — भक्ति, सेवा और मानव कल्याण।"</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" title="Facebook">f</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="#" class="social-icon" title="Instagram">📷</a>
+          <a href="#" class="social-icon" title="Google">🔍</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4 data-hi="त्वरित लिंक" data-en="Quick Links">त्वरित लिंक</h4>
+        <a href="index.html" data-hi="होम" data-en="Home">होम</a>
+        <a href="sevak-dal.html" data-hi="बिहारी जी सेवक दल" data-en="Sevak Dal">बिहारी जी सेवक दल</a>
+        <a href="aarti.html" data-hi="आरती संग्रह" data-en="Aarti Sangrah">आरती संग्रह</a>
+        <a href="gallery.html" data-hi="फोटो गैलरी" data-en="Gallery">फोटो गैलरी</a>
+        <a href="donate.html" data-hi="दान व सहयोग" data-en="Donate">दान व सहयोग</a>
+        <a href="contact.html" data-hi="संपर्क व दर्शन समय" data-en="Contact">संपर्क व दर्शन समय</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="आरती समय" data-en="Aarti Timings">आरती समय</h4>
+        <p><strong>प्रातः आरती:</strong> 6:00 AM</p>
+        <p><strong>सायं आरती:</strong> 7:00 PM</p>
+        <p><strong>दर्शन:</strong> 5 AM – 12 PM, 4 PM – 9 PM</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-hi="संपर्क" data-en="Address">संपर्क</h4>
+        <p><strong>📱 फोन:</strong></p>
+        <a href="tel:7060806121">+91-7060806121</a>
+        <p style="margin-top: 12px;"><strong>📧 ईमेल:</strong></p>
+        <a href="mailto:info@bankebihari.com">info@bankebihari.com</a>
+        <p style="margin-top: 12px;"><strong>📍 पता:</strong><br>
+        ग्राम सैनवा, छाता, मथुरा (उत्तर प्रदेश)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-hi="© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।" data-en="© 2026 Shree Banke Bihari Ji Mandir. All rights reserved.">© 2026 श्री बांके बिहारी जी मंदिर . सर्वाधिकार सुरक्षित।</p>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

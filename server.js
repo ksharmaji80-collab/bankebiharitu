@@ -155,6 +155,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Explicit page routes
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 app.get('/sevak-dal', (req, res) => res.sendFile(path.join(__dirname, 'sevak-dal.html')));
+app.get('/aarti', (req, res) => res.sendFile(path.join(__dirname, 'aarti.html')));
 app.get('/gallery', (req, res) => res.sendFile(path.join(__dirname, 'gallery.html')));
 app.get('/donate', (req, res) => res.sendFile(path.join(__dirname, 'donate.html')));
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'contact.html')));

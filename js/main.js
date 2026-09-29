@@ -865,6 +865,457 @@ function initFloatingAudioPlayer() {
   });
 }
 
+// --- 9. AARTI SANGRAH & STUTI DATA & CONTROLLER ---
+const aartiData = {
+  'banke-bihari': {
+    title: { hi: "श्री बांके बिहारी जी की आरती", en: "Shree Banke Bihari Ji Aarti" },
+    badge: "🌸 श्री बांके बिहारी जी",
+    lyrics: `॥ श्री बांके बिहारी तेरी आरती गाऊं ॥
+
+श्री बांके बिहारी तेरी आरती गाऊं,
+हे गिरधर तेरी आरती गाऊं।
+आरती गाऊं प्यारे तुमको रिझाऊं,
+हे गिरधर तेरी आरती गाऊं॥
+
+बाल रूप तेरी लीला न्यारी,
+मोहे मोहनी मूरत प्यारी।
+नैनन में छवि तेरी बसाऊं,
+हे गिरधर तेरी आरती गाऊं॥
+
+मोर मुकुट प्रभु शीश पे सोहे,
+प्यारी बंशी मेरो मन मोहे।
+देखि रूप सब कुछ बिसराऊं,
+हे गिरधर तेरी आरती गाऊं॥
+
+चरण कमल में शीश झुकाऊं,
+माखन मिसरी भोग लगाऊं।
+मन मोहन तेरी आरती गाऊं,
+हे गिरधर तेरी आरती गाऊं॥
+
+श्री हरिदास के प्यारे तुम हो,
+मेरे तो बस सर्वस्व तुम हो।
+जीवन अपना सफल बनाऊं,
+हे गिरधर तेरी आरती गाऊं॥
+
+श्री बांके बिहारी तेरी आरती गाऊं,
+हे गिरधर तेरी आरती गाऊं।
+आरती गाऊं प्यारे तुमको रिझाऊं,
+हे गिरधर तेरी आरती गाऊं॥`
+  },
+  'kunj-bihari': {
+    title: { hi: "आरती कुंजबिहारी की", en: "Aarti Kunj Bihari Ki" },
+    badge: "🪈 श्री कुंजबिहारी जी",
+    lyrics: `॥ आरती कुंजबिहारी की ॥
+
+आरती कुंजबिहारी की,
+श्री गिरिधर कृष्णमुरारी की॥
+
+गले में बैजंती माला,
+बजावै मुरली मधुर बाला।
+श्रवण में कुंडल झलकाला,
+नंद के आनंद नंदलाला।
+श्री गिरिधर कृष्णमुरारी की॥
+आरती कुंजबिहारी की...
+
+गगन सम अंग कांति काली,
+राधिका चमक रही आली।
+लतन में ठाढ़े बनमाली;
+भ्रमर सी अलक, कस्तूरी तिलक,
+चंद्र सी झलक; ललित छवि श्यामा प्यारी की।
+श्री गिरिधर कृष्णमुरारी की॥
+आरती कुंजबिहारी की...
+
+कनकमय मोर मुकुट बिलसै,
+देवता दरसन को तरसैं।
+गगन सों सुमन रासि बरसै;
+बजे मुरचंग, मधुर मृदंग,
+ग्वालिन संग; अतुल रति गोप कुमारी की।
+श्री गिरिधर कृष्णमुरारी की॥
+आरती कुंजबिहारी की...
+
+जहाँ ते प्रगट भई गंगा,
+कलुष कलिहारिणी श्रीगंगा।
+स्मरन ते होत मोह भंगा;
+बसी मन उच्छंग, उमंग श्रीअंग,
+नवल छवि शंख, चरण छवि श्रीबनवारी की।
+श्री गिरिधर कृष्णमुरारी की॥
+आरती कुंजबिहारी की...
+
+चमकती उज्ज्वल तट पर यमुना,
+धरे प्रभु अधर मधुर बंसी।
+सुने सब सुर-मुनि मन हर्षावे;
+करत हैं ध्यान, सुनत सब गान,
+रहें मतिमान; आरती कुंजबिहारी की।
+श्री गिरिधर कृष्णमुरारी की॥`
+  },
+  'ram-stuti': {
+    title: { hi: "श्री राम स्तुति (श्री रामचंद्र कृपालु भजु मन)", en: "Shree Ram Stuti" },
+    badge: "🏹 मर्यादा पुरुषोत्तम श्री राम",
+    lyrics: `॥ श्री रामचन्द्र कृपालु भजु मन ॥
+
+श्रीरामचन्द्र कृपालु भजु मन हरण भवभय दारुणं।
+नव कंज लोचन कंज मुख कर कंज पद कंजारुणं॥
+
+कंदर्प अगणित अमित छवि नव नील नीरद सुंदरं।
+पटपीत मानहुँ तड़ित रुचि शुचि नौमि जनक सुतावरं॥
+
+भजु दीनबंधु दिनेश दानव दैत्य वंश निकंदनं।
+रघुनंद आनंद कंद कोशल चंद दशरथ नंदनं॥
+
+सिर मुकुट कुंडल तिलक चारु उदारु अंग विभूषणं।
+आजानु भुज शर चाप धर संग्राम जित खरदूषणं॥
+
+इति वदति तुलसीदास शंकर शेष मुनि मन रंजनं।
+मम हृदय कंज निवास कुरु कामादि खल दल गंजनं॥
+
+मनु जाहिं राचेउ मिलिहि सो बरु सहज सुंदर साँवरो।
+करुना निधान सुजान सीलु सनेहु जानत रावरो॥
+
+एहि भाँति गौरि असीस सुनि सिय सहित हिय हरषीं अली।
+तुलसी भवानिहि पूजि पुनि पुनि मुदित मन मंदिर चली॥`
+  },
+  'hanuman': {
+    title: { hi: "श्री हनुमान लला की आरती", en: "Shree Hanuman Ji Aarti" },
+    badge: "🚩 संकटमोचन श्री हनुमान",
+    lyrics: `॥ आरती कीजै हनुमान लला की ॥
+
+आरती कीजै हनुमान लला की।
+दुष्ट दलन रघुनाथ कला की॥
+
+जाके बल से गिरिवर कांपे।
+रोग दोष जाके निकट न झांके॥
+अंजनि पुत्र महा बलदाई।
+संतन के प्रभु सदा सहाई॥
+आरती कीजै हनुमान लला की...
+
+दे बीड़ा रघुनाथ पठाए।
+लंका जारी सीय सुधि लाए॥
+लंका सो कोट समुद्र सी खाई।
+जात पवनसुत बार न लाई॥
+आरती कीजै हनुमान लला की...
+
+लंका जारि असुर संहारे।
+सियारामजी के काज संवारे॥
+लक्ष्मण मूर्छित पड़े सकारे।
+आनि संजीवन प्रान उबारे॥
+आरती कीजै हनुमान लला की...
+
+पैठि पताल तोरि जम-कारे।
+अहिरावण की भुजा उखारे॥
+बाएं भुजा असुर दल मारे।
+दाहिने भुजा संत जन तारे॥
+आरती कीजै हनुमान लला की...
+
+सुर नर मुनि आरती उतारें।
+जय जय जय हनुमान उचारें॥
+कंचन थार कपूर लौ छाई।
+आरती करत अंजना माई॥
+आरती कीजै हनुमान लला की...
+
+जो हनुमानजी की आरती गावै।
+बसि बैकुंठ परम पद पावै॥
+आरती कीजै हनुमान लला की।
+दुष्ट दलन रघुनाथ कला की॥`
+  },
+  'shiva': {
+    title: { hi: "श्री शिव जी की आरती (ॐ जय शिव ओंकारा)", en: "Lord Shiva Aarti" },
+    badge: "🕉️ देवों के देव महादेव",
+    lyrics: `॥ ॐ जय शिव ओंकारा ॥
+
+ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा।
+ब्रह्मा विष्णु सदाशिव अर्द्धांगी धारा॥
+ॐ जय शिव ओंकारा...
+
+एकानन चतुरानन पंचानन राजे।
+हंसासन गरुड़ासन वृषवाहन साजे॥
+ॐ जय शिव ओंकारा...
+
+दो भुज चारु चतुर्भुज दशभुज अति सोहे।
+तीनों रूप निरखता त्रिभुवन जन मोहे॥
+ॐ जय शिव ओंकारा...
+
+अक्षमाला वनमाला रुण्डमाला धारी।
+चंदन मृगमद सोहै भाले शशिधारी॥
+ॐ जय शिव ओंकारा...
+
+श्वेतांबर पीतांबर बाघंबर अंगे।
+सनकादिक गरुड़ादिक भूतादिक संगे॥
+ॐ जय शिव ओंकारा...
+
+कर के मध्य कमंडलु चक्र त्रिशूल धरता।
+जगकर्ता जगभर्ता जगसंहारकर्ता॥
+ॐ जय शिव ओंकारा...
+
+ब्रह्मा विष्णु सदाशिव जानत अविवेका।
+प्रणवाक्षर के मध्ये ये तीनों एका॥
+ॐ जय शिव ओंकारा...
+
+त्रिगुण शिवजी की आरती जो कोई नर गावे।
+कहत शिवानंद स्वामी मनवांछित फल पावे॥
+ॐ जय शिव ओंकारा...`
+  },
+  'ganesh': {
+    title: { hi: "श्री गणेश जी की आरती (जय गणेश देवा)", en: "Shree Ganesh Aarti" },
+    badge: "🐘 विघ्नहर्ता श्री गणेश",
+    lyrics: `॥ जय गणेश जय गणेश देवा ॥
+
+जय गणेश, जय गणेश, जय गणेश देवा।
+माता जाकी पार्वती, पिता महादेवा॥
+
+एक दंत दयावंत, चार भुजा धारी।
+माथे सिंदूर सोहे, मूसे की सवारी॥
+पान चढ़े, फूल चढ़े, और चढ़े मेवा।
+लड्डुअन का भोग लगे, संत करें सेवा॥
+जय गणेश, जय गणेश देवा...
+
+अंधे को आंख देत, कोढ़िन को काया।
+बांझन को पुत्र देत, निर्धन को माया॥
+'सूर' श्याम शरण आए, सफल कीजे सेवा।
+माता जाकी पार्वती, पिता महादेवा॥
+जय गणेश, जय गणेश देवा...`
+  },
+  'ambe': {
+    title: { hi: "श्री अम्बे माता जी की आरती (जय अम्बे गौरी)", en: "Shree Ambe Gauri Aarti" },
+    badge: "🪔 जगदम्बा माँ भवानी",
+    lyrics: `॥ जय अम्बे गौरी ॥
+
+जय अम्बे गौरी, मैया जय श्यामा गौरी।
+तुमको निशिदिन ध्यावत, हरि ब्रह्मा शिवरी॥
+ॐ जय अम्बे गौरी...
+
+मांग सिंदूर विराजत, टीको मृगमद को।
+उज्ज्वल से दोउ नैना, चंद्रवदन नीको॥
+ॐ जय अम्बे गौरी...
+
+कनक समान कलेवर, रक्तांबर राजै।
+रक्तपुष्प गल माला, कंठन पर साजै॥
+ॐ जय अम्बे गौरी...
+
+केहरि वाहन राजत, खड्ग खप्पर धारी।
+सुर-नर-मुनिजन सेवत, तिनके दुखहारी॥
+ॐ जय अम्बे गौरी...
+
+कानन कुंडल शोभित, नासाग्रे मोती।
+कोटिक चंद्र दिवाकर, सम राजत ज्योति॥
+ॐ जय अम्बे गौरी...
+
+शुम्भ निशुम्भ बिदारे, महिषासुर घाती।
+धूम्र विलोचन नैना, निशिदिन मदमाती॥
+ॐ जय अम्बे गौरी...
+
+चौंसठ योगिनी मंगल गावैं, नृत्य करत भैरूं।
+बाजत ताल मृदंगा, अरु बाजत डमरूं॥
+ॐ जय अम्बे गौरी...
+
+भुजा चार अति शोभित, वरमुद्रा धारी।
+मनवांछित फल पावत, सेवत नर नारी॥
+ॐ जय अम्बे गौरी...
+
+श्री अम्बेजी की आरती, जो कोई नर गावै।
+कहत शिवानंद स्वामी, सुख-संपत्ति पावै॥
+ॐ जय अम्बे गौरी...`
+  },
+  'jagdish': {
+    title: { hi: "श्री जगदीश जी की आरती (ॐ जय जगदीश हरे)", en: "Om Jai Jagdish Hare" },
+    badge: "🌟 भगवान श्री सत्यनारायण",
+    lyrics: `॥ ॐ जय जगदीश हरे ॥
+
+ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे।
+भक्त जनों के संकट, क्षण में दूर करे॥
+ॐ जय जगदीश हरे...
+
+जो ध्यावे फल पावे, दुख बिनसे मन का।
+सुख संपत्ति घर आवे, कष्ट मिटे तन का॥
+ॐ जय जगदीश हरे...
+
+मात-पिता तुम मेरे, शरण गहूँ किसकी।
+तुम बिन और न दूजा, आस करूँ जिसकी॥
+ॐ जय जगदीश हरे...
+
+तुम पूरण परमात्मा, तुम अंतर्यामी।
+पारब्रह्म परमेश्वर, तुम सब के स्वामी॥
+ॐ जय जगदीश हरे...
+
+तुम करुणा के सागर, तुम पालनकर्ता।
+मैं मूरख खल कामी, कृपा करो भर्ता॥
+ॐ जय जगदीश हरे...
+
+तुम हो एक अगोचर, सबके प्राणपति।
+किस विधि मिलूँ दयामय, तुमको मैं कुमति॥
+ॐ जय जगदीश हरे...
+
+दीनबंधु दुखहर्ता, तुम ठाकुर मेरे।
+अपने हाथ उठाओ, द्वार पड़ा तेरे॥
+ॐ जय जगदीश हरे...
+
+विषय विकार मिटाओ, पाप हरो देवा।
+श्रद्धा भक्ति बढ़ाओ, संतन की सेवा॥
+ॐ जय जगदीश हरे...
+
+तन-मन-धन सब है तेरा, स्वामी सब कुछ है तेरा।
+तेरा तुझको अर्पण, क्या लागे मेरा॥
+ॐ जय जगदीश हरे...`
+  }
+};
+
+function initAartiPage() {
+  const modal = document.getElementById('aartiModal');
+  const modalOverlay = document.getElementById('aartiModalOverlay');
+  const modalClose = document.getElementById('btnAartiModalClose');
+  const modalCloseBottom = document.getElementById('btnModalCloseBottom');
+  const modalTitle = document.getElementById('modalAartiTitle');
+  const modalBadge = document.getElementById('modalDeityBadge');
+  const modalBody = document.getElementById('modalAartiBody');
+  const btnZoomIn = document.getElementById('btnZoomIn');
+  const btnZoomOut = document.getElementById('btnZoomOut');
+  const btnCopy = document.getElementById('btnCopyAarti');
+  const copyText = document.getElementById('copyAartiText');
+
+  const searchInput = document.getElementById('aartiSearchInput');
+  const filterChips = document.getElementById('aartiFilterChips');
+  const aartiGrid = document.getElementById('aartiGrid');
+  const noResultsMsg = document.getElementById('noAartiResults');
+
+  let currentAartiKey = null;
+  let zoomLevel = 0; // 0: normal, 1: zoom-lg, 2: zoom-xl
+
+  function openAartiModal(key) {
+    const data = aartiData[key];
+    if (!data || !modal) return;
+    currentAartiKey = key;
+    const lang = getSavedLang();
+    modalTitle.textContent = data.title[lang] || data.title.hi;
+    modalBadge.textContent = data.badge;
+    modalBody.textContent = data.lyrics;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAartiModal() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (modalClose) modalClose.addEventListener('click', closeAartiModal);
+  if (modalCloseBottom) modalCloseBottom.addEventListener('click', closeAartiModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', closeAartiModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeAartiModal();
+    }
+  });
+
+  // Font zoom controls
+  if (btnZoomIn && modalBody) {
+    btnZoomIn.addEventListener('click', () => {
+      if (zoomLevel < 2) zoomLevel++;
+      applyZoom();
+    });
+  }
+  if (btnZoomOut && modalBody) {
+    btnZoomOut.addEventListener('click', () => {
+      if (zoomLevel > 0) zoomLevel--;
+      applyZoom();
+    });
+  }
+
+  function applyZoom() {
+    if (!modalBody) return;
+    modalBody.classList.remove('zoom-lg', 'zoom-xl');
+    if (zoomLevel === 1) modalBody.classList.add('zoom-lg');
+    if (zoomLevel === 2) modalBody.classList.add('zoom-xl');
+  }
+
+  // Copy lyrics
+  if (btnCopy && copyText) {
+    btnCopy.addEventListener('click', () => {
+      if (!currentAartiKey || !aartiData[currentAartiKey]) return;
+      const textToCopy = `${aartiData[currentAartiKey].title.hi}\n\n${aartiData[currentAartiKey].lyrics}\n\n🙏 श्री बांके बिहारी जी मंदिर, सैनवा (मथुरा)`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(showCopied).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+
+      function showCopied() {
+        const prev = copyText.textContent;
+        copyText.textContent = "✓ कॉपी!";
+        setTimeout(() => { copyText.textContent = prev; }, 2000);
+      }
+
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = textToCopy;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand('copy');
+          showCopied();
+        } catch (e) {}
+        document.body.removeChild(temp);
+      }
+    });
+  }
+
+  // Card click delegation
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-read-aarti');
+    if (btn) {
+      const key = btn.getAttribute('data-aarti');
+      openAartiModal(key);
+    }
+  });
+
+  // Search & Filter
+  function filterAartis() {
+    if (!aartiGrid) return;
+    const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    const activeChip = filterChips ? filterChips.querySelector('.aarti-filter-btn.active') : null;
+    const category = activeChip ? activeChip.getAttribute('data-category') : 'all';
+
+    const cards = aartiGrid.querySelectorAll('.aarti-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const title = card.querySelector('.aarti-card-title')?.textContent.toLowerCase() || '';
+      const preview = card.querySelector('.aarti-card-preview')?.textContent.toLowerCase() || '';
+      const cardCat = card.getAttribute('data-category');
+
+      const matchesCategory = (category === 'all' || cardCat === category);
+      const matchesSearch = (!query || title.includes(query) || preview.includes(query));
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (noResultsMsg) {
+      noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterAartis);
+  }
+
+  if (filterChips) {
+    filterChips.addEventListener('click', (e) => {
+      const chip = e.target.closest('.aarti-filter-btn');
+      if (!chip) return;
+      filterChips.querySelectorAll('.aarti-filter-btn').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      filterAartis();
+    });
+  }
+}
+
 // Page Loader Hide & Initial Data Fetch
 window.addEventListener('load', () => {
   setTimeout(() => document.querySelector('.page-loader')?.classList.add('hide'), 400);
@@ -872,6 +1323,8 @@ window.addEventListener('load', () => {
   initTempleStats();
   loadTopReviews();
   initFloatingAudioPlayer();
+  initAartiPage();
 });
+
 
 
