@@ -628,10 +628,250 @@ document.body.appendChild(topBtn);
 window.addEventListener('scroll', () => topBtn.classList.toggle('show', window.scrollY > 400), { passive: true });
 topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// --- 8. FLOATING DEVOTIONAL AUDIO PLAYER (KRISHNA BANSURI & AMBIENT DRONE) ---
+class DivineAudioEngine {
+  constructor() {
+    this.ctx = null;
+    this.isPlaying = false;
+    this.masterGain = null;
+    this.timerId = null;
+    this.droneNodes = [];
+    this.audioEl = null;
+  }
+
+  init() {
+    try {
+      this.audioEl = new Audio('assets/audio/bhajan.mp3');
+      this.audioEl.loop = true;
+      this.audioEl.preload = 'auto';
+      this.audioEl.volume = 0.75;
+    } catch (e) {
+      this.audioEl = null;
+    }
+  }
+
+  start() {
+    if (this.audioEl) {
+      const playPromise = this.audioEl.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            this.isPlaying = true;
+          })
+          .catch(() => {
+            this.startSynth();
+          });
+        this.isPlaying = true;
+        return;
+      }
+    }
+    this.startSynth();
+  }
+
+  stop() {
+    if (this.audioEl && !this.audioEl.paused) {
+      this.audioEl.pause();
+    }
+    this.stopSynth();
+    this.isPlaying = false;
+  }
+
+  startSynth() {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    if (!this.ctx) {
+      this.ctx = new AudioContext();
+    }
+    if (this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+
+    this.masterGain = this.ctx.createGain();
+    this.masterGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
+    this.masterGain.gain.exponentialRampToValueAtTime(0.18, this.ctx.currentTime + 1.2);
+    this.masterGain.connect(this.ctx.destination);
+
+    this.startTanpuraDrone();
+    this.startFluteMelody();
+    this.isPlaying = true;
+  }
+
+  stopSynth() {
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+      this.timerId = null;
+    }
+
+    if (this.masterGain && this.ctx) {
+      try {
+        const now = this.ctx.currentTime;
+        this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, now);
+        this.masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+        setTimeout(() => {
+          this.droneNodes.forEach(node => {
+            try { node.stop(); node.disconnect(); } catch (e) {}
+          });
+          this.droneNodes = [];
+        }, 850);
+      } catch (e) {}
+    }
+  }
+
+  startTanpuraDrone() {
+    const freqs = [146.83, 220.00, 293.66];
+    freqs.forEach((freq, idx) => {
+      const osc = this.ctx.createOscillator();
+      const droneGain = this.ctx.createGain();
+      const filter = this.ctx.createBiquadFilter();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq + (idx === 1 ? 0.3 : -0.2), this.ctx.currentTime);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(420, this.ctx.currentTime);
+
+      droneGain.gain.setValueAtTime(0.035 / (idx + 1), this.ctx.currentTime);
+
+      const lfo = this.ctx.createOscillator();
+      const lfoGain = this.ctx.createGain();
+      lfo.frequency.setValueAtTime(0.25 + idx * 0.15, this.ctx.currentTime);
+      lfoGain.gain.setValueAtTime(0.012, this.ctx.currentTime);
+      lfo.connect(lfoGain);
+      lfoGain.connect(droneGain.gain);
+      lfo.start();
+
+      osc.connect(filter);
+      filter.connect(droneGain);
+      droneGain.connect(this.masterGain);
+      osc.start();
+
+      this.droneNodes.push(osc, lfo);
+    });
+  }
+
+  startFluteMelody() {
+    const notes = [
+      { freq: 293.66, dur: 1.6 },
+      { freq: 329.63, dur: 1.2 },
+      { freq: 369.99, dur: 2.0 },
+      { freq: 440.00, dur: 1.5 },
+      { freq: 369.99, dur: 1.2 },
+      { freq: 329.63, dur: 1.8 },
+      { freq: 293.66, dur: 2.4 },
+      { freq: 369.99, dur: 1.4 },
+      { freq: 440.00, dur: 1.8 },
+      { freq: 493.88, dur: 1.5 },
+      { freq: 587.33, dur: 2.6 },
+      { freq: 493.88, dur: 1.4 },
+      { freq: 440.00, dur: 2.0 },
+      { freq: 369.99, dur: 1.8 },
+      { freq: 329.63, dur: 2.2 },
+      { freq: 293.66, dur: 3.2 }
+    ];
+
+    let noteIdx = 0;
+
+    const playNextNote = () => {
+      if (!this.isPlaying || !this.ctx) return;
+      const note = notes[noteIdx];
+      noteIdx = (noteIdx + 1) % notes.length;
+
+      const osc = this.ctx.createOscillator();
+      const oscGain = this.ctx.createGain();
+      const filter = this.ctx.createBiquadFilter();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(note.freq, this.ctx.currentTime);
+
+      const vibrato = this.ctx.createOscillator();
+      const vibGain = this.ctx.createGain();
+      vibrato.frequency.setValueAtTime(5.2, this.ctx.currentTime);
+      vibGain.gain.setValueAtTime(2.2, this.ctx.currentTime);
+      vibrato.connect(vibGain);
+      vibGain.connect(osc.frequency);
+      vibrato.start();
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(1400, this.ctx.currentTime);
+
+      const now = this.ctx.currentTime;
+      const attack = 0.25;
+      const release = 0.45;
+      oscGain.gain.setValueAtTime(0.0001, now);
+      oscGain.gain.linearRampToValueAtTime(0.18, now + attack);
+      oscGain.gain.setValueAtTime(0.18, now + note.dur - release);
+      oscGain.gain.exponentialRampToValueAtTime(0.0001, now + note.dur);
+
+      osc.connect(filter);
+      filter.connect(oscGain);
+      oscGain.connect(this.masterGain);
+
+      osc.start(now);
+      osc.stop(now + note.dur + 0.1);
+      vibrato.stop(now + note.dur + 0.1);
+
+      this.timerId = setTimeout(playNextNote, (note.dur + 0.35) * 1000);
+    };
+
+    playNextNote();
+  }
+}
+
+function initFloatingAudioPlayer() {
+  if (document.getElementById('floatingAudioPlayer')) return;
+
+  const playerEl = document.createElement('div');
+  playerEl.className = 'floating-audio-player';
+  playerEl.id = 'floatingAudioPlayer';
+  playerEl.innerHTML = `
+    <button type="button" class="audio-player-btn" id="audioPlayerBtn" aria-label="Play Devotional Flute Music">
+      <div class="audio-flute-icon">🪈</div>
+      <div class="audio-btn-labels">
+        <span class="audio-btn-title" data-hi="बिहारी जी धुन" data-en="Divine Flute">बिहारी जी धुन</span>
+        <span class="audio-btn-sub" id="audioBtnSub" data-hi="संगीत सुनें" data-en="Play Music">संगीत सुनें</span>
+      </div>
+      <div class="audio-waves" aria-hidden="true">
+        <div class="audio-wave-bar"></div>
+        <div class="audio-wave-bar"></div>
+        <div class="audio-wave-bar"></div>
+        <div class="audio-wave-bar"></div>
+      </div>
+    </button>
+  `;
+  document.body.appendChild(playerEl);
+
+  const audioEngine = new DivineAudioEngine();
+  audioEngine.init();
+
+  const btn = document.getElementById('audioPlayerBtn');
+  const subText = document.getElementById('audioBtnSub');
+
+  btn.addEventListener('click', () => {
+    const lang = getSavedLang();
+    if (audioEngine.isPlaying) {
+      audioEngine.stop();
+      btn.classList.remove('playing');
+      subText.textContent = lang === 'hi' ? 'संगीत सुनें' : 'Play Music';
+      subText.setAttribute('data-hi', 'संगीत सुनें');
+      subText.setAttribute('data-en', 'Play Music');
+    } else {
+      audioEngine.start();
+      btn.classList.add('playing');
+      subText.textContent = lang === 'hi' ? 'संगीत रोकें' : 'Pause';
+      subText.setAttribute('data-hi', 'संगीत रोकें');
+      subText.setAttribute('data-en', 'Pause');
+    }
+  });
+}
+
 // Page Loader Hide & Initial Data Fetch
 window.addEventListener('load', () => {
   setTimeout(() => document.querySelector('.page-loader')?.classList.add('hide'), 400);
   setLanguage(getSavedLang());
   initTempleStats();
   loadTopReviews();
+  initFloatingAudioPlayer();
 });
+
+
