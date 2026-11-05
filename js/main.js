@@ -104,12 +104,12 @@ async function loadTopReviews() {
       ...localReviews.filter(r => !existingIds.has(r.id)),
       ...allFileReviews
     ];
-    currentTopReviews = merged.slice(0, 3);
+    currentTopReviews = merged.slice(0, 6);
     renderReviews(currentTopReviews);
   } catch (err) {
     console.log('Using local/fallback reviews:', err);
     if (localReviews.length > 0) {
-      currentTopReviews = localReviews.slice(0, 3);
+      currentTopReviews = localReviews.slice(0, 6);
       renderReviews(currentTopReviews);
     }
   }
@@ -375,7 +375,7 @@ if (reviewForm) {
 
     // 3. Immediately display this review on index.html at the top!
     currentTopReviews.unshift(newReview);
-    currentTopReviews = currentTopReviews.slice(0, 3);
+    currentTopReviews = currentTopReviews.slice(0, 6);
     renderReviews(currentTopReviews);
 
     // 4. Show success notification

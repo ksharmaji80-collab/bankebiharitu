@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const reviewsFilePath = path.join(__dirname, 'data', 'reviews.json');
+const publicReviewsFilePath = path.join(__dirname, 'public', 'data', 'reviews.json');
+const distReviewsFilePath = path.join(__dirname, 'dist', 'data', 'reviews.json');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -105,12 +107,25 @@ app.post('/api/reviews', (req, res) => {
   // Add new review at the beginning
   reviews.unshift(newReview);
 
-  // Write directly into data/reviews.json on disk!
+  // Write into data/reviews.json and public/data/reviews.json on disk!
+  const reviewsJsonString = JSON.stringify(reviews, null, 2);
   try {
-    fs.writeFileSync(reviewsFilePath, JSON.stringify(reviews, null, 2), 'utf8');
+    fs.writeFileSync(reviewsFilePath, reviewsJsonString, 'utf8');
   } catch (e) {
-    console.error('Error saving to reviews.json:', e);
+    console.error('Error saving to data/reviews.json:', e);
   }
+  try {
+    if (fs.existsSync(path.dirname(publicReviewsFilePath))) {
+      fs.writeFileSync(publicReviewsFilePath, reviewsJsonString, 'utf8');
+    }
+  } catch (e) {
+    console.error('Error saving to public/data/reviews.json:', e);
+  }
+  try {
+    if (fs.existsSync(path.dirname(distReviewsFilePath))) {
+      fs.writeFileSync(distReviewsFilePath, reviewsJsonString, 'utf8');
+    }
+  } catch (e) {}
 
   res.status(201).json({ status: 'success', review: newReview, totalReviews: reviews.length });
 });
