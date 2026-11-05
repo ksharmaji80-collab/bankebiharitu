@@ -38,19 +38,7 @@
     "rating": 5,
     "date": "2026-10-12"
   },
-  {
-    "id": 1790327179789,
-    "author": {
-      "hi": "gopal sharma",
-      "en": "gopal sharma"
-    },
-    "text": {
-      "hi": "sabhi har mahine 10 tarik ko qr pr 200 rupee kre jisse ki mandir ka fund badh jaye",
-      "en": "sabhi har mahine 10 tarik ko qr pr 200 rupee kre jisse ki mandir ka fund badh jaye"
-    },
-    "rating": 5,
-    "date": "2026-09-25"
-  },
+  
   {
     "id": 1788871689314,
     "author": {
@@ -64,19 +52,7 @@
     "rating": 5,
     "date": "2026-09-08"
   },
-  {
-    "id": 1,
-    "author": {
-      "hi": "राधा शर्मा",
-      "en": "Radha Sharma"
-    },
-    "text": {
-      "hi": "मंदिर की 3D आभासी सेवा बहुत ही सुंदर है। घर बैठे श्री बांके बिहारी जी के दर्शन का असीम आनंद मिला।",
-      "en": "The 3D virtual temple seva is breathtaking. Blessed to experience divine darshan of Shree Banke Bihari Ji from home."
-    },
-    "rating": 5,
-    "date": "2026-09-01"
-  },
+ 
   {
     "id": 2,
     "author": {
